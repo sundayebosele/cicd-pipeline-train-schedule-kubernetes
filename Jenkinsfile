@@ -31,7 +31,7 @@ pipeline {
             }
             steps {
                 script {
-                    docker.withRegistry('harbor.ebosele.comm', 'harbor-id') {
+                    docker.withRegistry('http://harbor.ebosele.comm', 'harbor-id') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }
